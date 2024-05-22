@@ -134,7 +134,7 @@ export default function LandInPage(){
 
 const ImageFundo = styled.img`
     width: 50%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: 0;
     opacity: 0.2;
