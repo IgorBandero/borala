@@ -85,10 +85,6 @@ const FaleConoscoContainer = styled.div`
         font-weight: 700;
     }
 
-    h4 {
-        color: rgb(230, 230, 230);
-    }
-
     @media (max-width: 650px) {
         button {
             width: 50%;
