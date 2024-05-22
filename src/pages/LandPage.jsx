@@ -193,7 +193,7 @@ const ImageFundoMobile = styled.img`
     height: 100vh;
     position: absolute;
     z-index: 0;
-    opacity: 0.2;
+    opacity: 0.4;
     left: 0;
     @media (max-width: 650px) {
         display: flex;
