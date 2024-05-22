@@ -1,6 +1,18 @@
 import { useState } from 'react';
 import { TextField, Button, Typography, Container, Box } from '@mui/material';
 import styled from 'styled-components';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        darkgray: {
+            main: 'rgb(20,20, 20)', 
+            light: 'rgb(100, 100, 100)',
+            dark: 'rgb(10, 10, 10)',
+            contrastText: 'rgb(255,255,255)'
+        }
+    },
+});
 
 export default function FaleConoscoPage() {
     const [nome, setNome] = useState('');
@@ -15,50 +27,52 @@ export default function FaleConoscoPage() {
     };
 
     return (
-        <FaleConoscoContainer>        
-            <Container maxWidth="sm">
-                <Box display="flex" justifyContent="center">
-                    <Typography variant="h4" gutterBottom>
-                        Fale Conosco
-                    </Typography>
-                </Box>
-                <form onSubmit={handleSubmit}>
-                    <TextField
-                    label="Nome"
-                    fullWidth
-                    margin="normal"
-                    variant="outlined"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                    size="small"
-                    />
-                    <TextField
-                    label="E-mail"
-                    fullWidth
-                    margin="normal"
-                    variant="outlined"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    size="small"
-                    />
-                    <TextField
-                    label="Mensagem"
-                    fullWidth
-                    margin="normal"
-                    variant="outlined"
-                    multiline
-                    rows={4}
-                    value={mensagem}
-                    onChange={(e) => setMensagem(e.target.value)}
-                    size="small"
-                    />
-                    <Box display="flex" justifyContent="center" size="small">
-                        <Button sx={{ mt: 3, mb: 2, textTransform: 'none' }} type="submit" variant="contained" color="primary">
-                            Enviar
-                        </Button>               
+        <FaleConoscoContainer>     
+            <ThemeProvider theme={theme}> 
+                <Container maxWidth="sm">
+                    <Box display="flex" justifyContent="center">
+                        <Typography variant="h4" gutterBottom sx={{color: "darkgray"}}>
+                            Fale Conosco
+                        </Typography>
                     </Box>
-                </form>
-            </Container>
+                    <form onSubmit={handleSubmit}>
+                        <TextField
+                        label="Nome"
+                        fullWidth
+                        margin="normal"
+                        variant="outlined"
+                        value={nome}
+                        onChange={(e) => setNome(e.target.value)}
+                        size="small"
+                        />
+                        <TextField
+                        label="E-mail"
+                        fullWidth
+                        margin="normal"
+                        variant="outlined"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        size="small"
+                        />
+                        <TextField
+                        label="Mensagem"
+                        fullWidth
+                        margin="normal"
+                        variant="outlined"
+                        multiline
+                        rows={4}
+                        value={mensagem}
+                        onChange={(e) => setMensagem(e.target.value)}
+                        size="small"
+                        />
+                        <Box display="flex" justifyContent="center" size="small">
+                            <Button sx={{ mt: 3, mb: 2, textTransform: 'none' }} type="submit" variant="contained" color="primary">
+                                Enviar
+                            </Button>               
+                        </Box>
+                    </form>
+                </Container>
+            </ThemeProvider>  
         </FaleConoscoContainer>
     );
 }
@@ -66,10 +80,13 @@ export default function FaleConoscoPage() {
 const FaleConoscoContainer = styled.div`
 
     width: 80%;
-    
     button {
         border-radius: 20px;
         font-weight: 700;
+    }
+
+    h4 {
+        color: rgb(230, 230, 230);
     }
 
     @media (max-width: 650px) {

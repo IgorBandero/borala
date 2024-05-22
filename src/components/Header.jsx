@@ -54,7 +54,7 @@ const HeaderContainer = styled.header`
     z-index: 2;   
     top: 0; 
 
-    @media (max-width: 576px) {
+    @media (max-width: 650px) {
         display: none;
     }
 `
@@ -95,7 +95,7 @@ const MenuMobile = styled.div`
     top: 0;
     z-index: 2;
 
-    @media (max-width: 576px) {
+    @media (max-width: 650px) {
         display: flex;
     }
 `

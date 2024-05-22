@@ -63,8 +63,8 @@ export default function LandInPage(){
 
                 <MainLeftContainer>
                     <h1>Bora lá</h1>
-                    <p>Conectando pessoas.</p>
-                    <p>Construindo experiências.</p>
+                    <p>Conectando pessoas</p>
+                    <p>através da tecnologia.</p>
                     <ThemeProvider theme={theme}>
                         <Button variant="contained" color="green" sx={{ textTransform: 'none', color: 'white' }} onClick={() => {setIsVisibleSignUp(true); setIsVisibleSignIn(false);}}>Comece agora</Button>
                     </ThemeProvider>
@@ -193,7 +193,7 @@ const ImageFundoMobile = styled.img`
     height: 100vh;
     position: absolute;
     z-index: 0;
-    opacity: 0.4;
+    opacity: 0.3;
     left: 0;
     @media (max-width: 650px) {
         display: flex;
@@ -502,7 +502,7 @@ const LeftContainer = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    //background-color: rgba(208, 255, 146, 0.7);    
+    //background-color: rgb(20,20,20);    
     background-color: rgb(173,173,173);
     padding-top: 10vh;
 
