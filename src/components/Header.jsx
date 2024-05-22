@@ -91,6 +91,9 @@ const Menu = styled.nav`
 `
 const MenuMobile = styled.div`
     display: none;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 
     @media (max-width: 576px) {
         display: flex;

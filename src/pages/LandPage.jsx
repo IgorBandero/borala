@@ -7,6 +7,7 @@ import FaleConoscoPage from "./FaleConoscoPage";
 import PageContainer from "../components/PageContainer";
 import logo from "../assets/logo-blue.png";
 import image01 from "../assets/image01.png";
+import image01_mobile from "../assets/image01-mobile.png";
 import image02 from "../assets/image02.png";
 import beer from "../assets/beer.svg";
 import game from "../assets/game.svg";
@@ -56,7 +57,10 @@ export default function LandInPage(){
             <Header onButtonClick={openSignIn}/>
 
             <MainContainer className="secao-com-imagem">
+
                 <ImageFundo src={image01} />
+                <ImageFundoMobile src={image02} />
+
                 <MainLeftContainer>
                     <h1>Bora lá</h1>
                     <p>Conectando pessoas.</p>
@@ -78,6 +82,7 @@ export default function LandInPage(){
                     <Button variant="text" sx={{ position: "absolute", top: "5px", left: "5px", color: "black"}} size="large" onClick={() => setIsVisibleSignIn(false)}>X</Button>
                     <SignInPage onButtonClick={openSignUp}/>
                 </SignInContainer>
+
             </MainContainer>  
 
             <AboutContainer id="about">
@@ -114,6 +119,18 @@ export default function LandInPage(){
                 </AboutRightContainer>
             </AboutContainer>  
 
+            <AboutContainerMobile id="about-mobile">
+                <div>
+                    <h1> Solução para </h1>
+                    <h1> universitários </h1>
+                    <p> Uma plataforma digital para universitários, 
+                        que facilita a descoberta e participação em uma 
+                        variedade de atividades e eventos, tornando a 
+                        experiência universitária mais conectada e satisfatória.</p>
+                </div>
+                <img src={image01_mobile} />
+            </AboutContainerMobile>
+
             <ContactContainer id="contact">
                 <LeftContainer>
                     <FaleConoscoPage />
@@ -126,7 +143,32 @@ export default function LandInPage(){
                                 
                     </RedesSociais>
                 </RightContainer>
-            </ContactContainer>     
+            </ContactContainer>   
+
+            <EventsContainerMobile> 
+                <OpcoesMobile>
+                    <div className="bar-festas">
+                        <img src={beer} />
+                        <h2> Bares & Festas </h2> 
+                    </div>
+                    <div className="games-esportes"> 
+                        <img src={game} />
+                        <h2> Games & Esportes </h2>
+                    </div>
+                    <div className="viagens-passeios"> 
+                        <img src={bus} />
+                        <h2> Viagens & Passeios </h2>
+                    </div>
+                    <div className="estudos"> 
+                        <img src={book} />
+                        <h2> Eventos Acadêmicos </h2>
+                    </div>
+                </OpcoesMobile>            
+            </EventsContainerMobile>  
+
+            <ContactContainerMobile id="contact-mobile">
+                <FaleConoscoPage />
+            </ContactContainerMobile>
 
         </PageContainer>
     );
@@ -144,6 +186,19 @@ const ImageFundo = styled.img`
         display: none;
     }
 `
+const ImageFundoMobile = styled.img`
+    display: none;
+
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    opacity: 0.2;
+    left: 0;
+    @media (max-width: 650px) {
+        display: flex;
+    }
+`
 const MainContainer = styled.main`
     display: flex;
     flex-direction: row;
@@ -155,7 +210,7 @@ const MainContainer = styled.main`
 
     @media (max-width: 650px) {
         flex-direction: column-reverse;
-        padding-top: 0;
+        background-color: black;
     }
 `
 const MainLeftContainer = styled.section`
@@ -196,6 +251,7 @@ const MainLeftContainer = styled.section`
 
     @media (max-width: 650px) {
         padding-left: 0;
+        padding-top: 10vh;
         width: 100%;
         height: 60%;
         align-items: center;
@@ -232,6 +288,7 @@ const MainRightContainer = styled.section`
 
     @media (max-width: 650px) {
         padding-right: 0;
+        padding-top: 10vh;
         width: 100%;
         height: 40%;
         justify-content: center;
@@ -372,6 +429,49 @@ const Opcoes = styled.div`
         width: 100%;
     }
 `
+const OpcoesMobile = styled.div`
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+
+    h2 {
+        font-size: 1.5em;
+        line-height: 1.3em;
+        width: 40%;
+        color: rgb(20, 20, 20);
+        color: white;
+    }
+
+    .bar-festas, .viagens-passeios, .games-esportes, .estudos  {
+
+        height: 25vh;
+        width: 100%;
+        padding-left: 5%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        & > img {
+            width: 25%;
+            margin-right: 5%;
+            filter: invert(100%);
+        }
+    }
+
+    .bar-festas, .viagens-passeios {
+        background-color: rgba(157, 207, 91, 0.7);
+    }
+
+    .games-esportes, .estudos {
+        background-color: rgba(208, 255, 146, 0.7);
+    }
+
+    @media (max-width: 650px) {
+        display: flex;
+    }
+`
 const ContactContainer = styled.main`
     display: flex;
     flex-direction: row;
@@ -470,7 +570,7 @@ const SignUpContainer = styled.div`
     justify-content: center;
     align-items: center;
     position: fixed;
-    z-index: 1;  
+    z-index: 5;  
     right: 0;
     bottom: 0;
     backdrop-filter: blur(10px);
@@ -497,7 +597,7 @@ const SignInContainer = styled.div`
     display: ${props => (props.isOpen ? "flex" : "none")};
     justify-content: center;
     position: fixed;
-    z-index: 1;  
+    z-index: 5;  
     right: 0;
     bottom: 0;
     backdrop-filter: blur(15px);
@@ -550,4 +650,72 @@ const RedesSociais = styled.div`
 `
 const Equipe = styled.div`
     
+`
+const AboutContainerMobile = styled.div`
+    display: none;
+    width: 100%;
+    height: 100vh;
+    padding-top: 10vh;
+    background-color: rgb(1, 23, 49);
+
+    & > img {
+        width: 100vw;
+        height: 40%;
+        opacity: 0.5;
+    }
+
+    & > div {
+
+        width: 70%;
+        color: white;
+        margin-bottom: 10vh;
+        text-align: center;
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            line-height: 1.3em;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 1.2em;
+            line-height: 1.6em;
+            word-wrap: break-word; 
+            hyphens: auto;
+        }
+    }
+
+    @media (max-width: 650px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+`
+const EventsContainerMobile = styled.div`
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(20,20,20);
+
+    @media (max-width: 650px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+`
+const ContactContainerMobile = styled.div`
+    width: 100%;
+    height: 100vh;
+    display: none;
+    background-color: rgb(173,173,173);
+    
+    @media (max-width: 650px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `

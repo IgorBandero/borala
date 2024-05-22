@@ -66,8 +66,15 @@ export default function FaleConoscoPage() {
 const FaleConoscoContainer = styled.div`
 
     width: 80%;
+    
     button {
         border-radius: 20px;
         font-weight: 700;
+    }
+
+    @media (max-width: 650px) {
+        button {
+            width: 50%;
+        }
     }
 `

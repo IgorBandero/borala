@@ -50,8 +50,8 @@ export default function NovoMenu() {
                             vertical: 'top',
                             horizontal: 'right',
                             }}>
-                            <Link to="about" smooth={true} duration={700}><MenuItem onClick={handleMenuClose}>Sobre</MenuItem></Link>
-                            <Link to="contact" smooth={true} duration={700}><MenuItem onClick={handleMenuClose}>Contato</MenuItem></Link>
+                            <Link to="about-mobile" smooth={true} duration={700}><MenuItem onClick={handleMenuClose}>Sobre</MenuItem></Link>
+                            <Link to="contact-mobile" smooth={true} duration={700}><MenuItem onClick={handleMenuClose}>Contato</MenuItem></Link>
                             <MenuItem onClick={handleMenuClose}>Entrar</MenuItem>
                         </Menu>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
