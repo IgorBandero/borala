@@ -25,9 +25,9 @@ export default function FaleConoscoPage() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log('Nome:', nome);
-        console.log('Email:', email);
-        console.log('Mensagem:', mensagem);
+        //console.log('Nome:', nome);
+        //console.log('Email:', email);
+        //console.log('Mensagem:', mensagem);
 
         const promise = MailServer.mailTo({nome, email, assunto, mensagem});
 
@@ -38,7 +38,7 @@ export default function FaleConoscoPage() {
         });
                 
         promise.catch(res => {
-            alert(res.response.data);
+            alert(res.data);
             //console.error('Erro ao enviar o email');
             //console.log(res.data);
         });
