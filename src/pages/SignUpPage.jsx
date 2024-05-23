@@ -103,7 +103,7 @@ export default function SignUpPage (props){
                                     rules={{
                                     required: 'E-mail é obrigatório',
                                     pattern: {
-                                        value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                                        value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/,
                                         message: 'E-mail inválido',
                                     },
                                     }}

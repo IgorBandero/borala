@@ -63,7 +63,7 @@ export default function LandInPage(){
 
                 <MainLeftContainer>
                     <h1>Bora lá</h1>
-                    <p>Conectando pessoas</p>
+                    <p>Conectando estudantes</p>
                     <p>através da tecnologia.</p>
                     <ThemeProvider theme={theme}>
                         <Button variant="contained" color="green" sx={{ textTransform: 'none', color: 'white' }} onClick={() => {setIsVisibleSignUp(true); setIsVisibleSignIn(false);}}>Comece agora</Button>
