@@ -496,14 +496,14 @@ const ContactContainer = styled.main`
     }
 `
 const LeftContainer = styled.section`
-    width: 50%;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     //background-color: rgb(20,20,20);    
-    background-color: rgb(173,173,173);
+    background-color: rgb(255,255,255);
     padding-top: 10vh;
 
     h4 {
@@ -521,12 +521,12 @@ const LeftContainer = styled.section`
 
     button {
         margin-top: 25px;
-        width: 180px;
-        padding: 12px 20px 12px 20px;
+        width: 150px;
+        padding: 10px 15px 10px 15px;
         cursor: pointer;
         background-color: #3AA5E8;
         border: none;
-        border-radius: 10px;
+        border-radius: 20px;
         font-size: 1em;
         font-weight: 700;
         color: #141414
@@ -550,7 +550,7 @@ const LeftContainer = styled.section`
     }
 `
 const RightContainer = styled.section`
-    width: 50%;
+    width: 0%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -710,7 +710,7 @@ const ContactContainerMobile = styled.div`
     width: 100%;
     height: 100vh;
     display: none;
-    background-color: rgb(173,173,173);
+    background-color: rgb(255,255,255);
     
     @media (max-width: 650px) {
         display: flex;
