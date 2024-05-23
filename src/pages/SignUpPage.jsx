@@ -214,6 +214,7 @@ const SignUpContainer = styled.div`
         font-size: 0.8em;
         color: black;
         text-align: center;
+        display: none;
     }
 
     a {

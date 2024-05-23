@@ -30,7 +30,7 @@ export default function Header(props){
                     <ul>
                         <li><Link to="about" smooth={true} duration={700}><Button sx={{ textTransform: 'none', color: 'white' }}>Sobre</Button></Link></li>
                         <li><Link to="contact" smooth={true} duration={700}><Button sx={{ textTransform: 'none', color: 'white'}}>Contato</Button></Link></li>
-                        <li><Button sx={{ textTransform: 'none', color: 'white'}} onClick={() => props.onButtonClick(true)} >Entrar</Button></li>
+                        <li><Button sx={{ display: "none", textTransform: 'none', color: 'white'}} onClick={() => props.onButtonClick(true)} >Entrar</Button></li>
                     </ul>
                 </Menu>
             </HeaderContainer>
