@@ -52,7 +52,7 @@ export default function NovoMenu() {
                             }}>
                             <Link to="about-mobile" smooth={true} duration={700}><MenuItem onClick={handleMenuClose}>Sobre</MenuItem></Link>
                             <Link to="contact-mobile" smooth={true} duration={700}><MenuItem onClick={handleMenuClose}>Contato</MenuItem></Link>
-                            <MenuItem onClick={handleMenuClose}>Entrar</MenuItem>
+                            <MenuItem sx={{display: 'none'}} onClick={handleMenuClose}>Entrar</MenuItem>
                         </Menu>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             Bora Lá
