@@ -43,14 +43,14 @@ export default function SignUpPage (props){
 
         promise.then(res => {
             //alert(res.data);
-            console.log(res.data);
+            console.log(res);
             alert("Cadastro realizado com sucesso!");
         });
                 
         promise.catch(res => {
             //alert(res.response.data);
-            console.log(res.data);
-            alert("Erro no cadastro!");
+            console.log(res);
+            alert("Erro no cadastro! E-mail já cadastrado.");
         });
     };
 
@@ -173,6 +173,7 @@ export default function SignUpPage (props){
                                         fullWidth
                                         label="Confirmar Senha"
                                         type="password"
+                                        InputProps={{ inputProps: { minLength: 8 } }}
                                         error={!!errors.confirmPassword}
                                         helperText={
                                         errors.confirmPassword

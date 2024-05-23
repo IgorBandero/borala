@@ -7,8 +7,8 @@ function signin(body) {
     return promise;
 }
 
-function signup(body) {
-    const promise = axios.post(`${API_URL}/user/signup`, body);
+async function signup(body) {
+    const promise = await axios.post(`${API_URL}/user/signup`, body);
     return promise;
 }
 
