@@ -4,6 +4,7 @@ import { Container, TextField, Button, Typography, Box, Grid, Avatar, Link } fro
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import AuthApi from '../services/AuthApi';
 
 const theme = createTheme({
     palette: {
@@ -32,7 +33,25 @@ export default function SignUpPage (props){
     } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data);
+    
+        let nome = data.name;
+        let email = data.email;
+        //let foto = data.photo;
+        let senha = data.password;
+
+        const promise = AuthApi.signup({nome, email, senha});
+
+        promise.then(res => {
+            //alert(res.data);
+            console.log(res.data);
+            alert("Cadastro realizado com sucesso!");
+        });
+                
+        promise.catch(res => {
+            //alert(res.response.data);
+            console.log(res.data);
+            alert("Erro no cadastro!");
+        });
     };
 
     SignUpPage.propTypes = {
@@ -100,6 +119,7 @@ export default function SignUpPage (props){
                                     />)}
                                 />
                             </Grid>
+                            {/*
                             <Grid item xs={12} sx={{ mt: 1 }}>
                                 <Controller
                                     name="photo"
@@ -116,8 +136,8 @@ export default function SignUpPage (props){
                                             size="small"
                                         />                        
                                     )}
-                                />
-                            </Grid>
+                                /> 
+                                </Grid> */}
                             <Grid item xs={12}>
                                 <Controller
                                     name="password"
@@ -144,8 +164,8 @@ export default function SignUpPage (props){
                                     defaultValue=""
                                     rules={{
                                     required: 'Confirmação de senha é obrigatória',
-                                    validate: (value) =>
-                                        value === password || 'As senhas não coincidem',
+                                    validate: (value) => {
+                                        value == password || 'As senhas não coincidem' },
                                     }}
                                     render={({ field }) => (
                                     <TextField

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { TextField, Button, Typography, Container, Box } from '@mui/material';
 import styled from 'styled-components';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import MailServer from '../services/MailServer';
+
 
 const theme = createTheme({
     palette: {
@@ -17,13 +19,29 @@ const theme = createTheme({
 export default function FaleConoscoPage() {
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
-    const [mensagem, setMensagem] = useState('');
+    const [assunto, setAssunto] = useState('');
+    const [mensagem, setMensagem] = useState('');    
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
         console.log('Nome:', nome);
         console.log('Email:', email);
         console.log('Mensagem:', mensagem);
+
+        const promise = MailServer.mailTo({nome, email, assunto, mensagem});
+
+        promise.then(res => {
+            alert(res.data);
+            //console.log('Email enviado com sucesso');
+            //console.log(res.data);
+        });
+                
+        promise.catch(res => {
+            alert(res.response.data);
+            //console.error('Erro ao enviar o email');
+            //console.log(res.data);
+        });
     };
 
     return (
@@ -52,6 +70,15 @@ export default function FaleConoscoPage() {
                         variant="outlined"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        size="small"
+                        />
+                        <TextField
+                        label="Assunto"
+                        fullWidth
+                        margin="normal"
+                        variant="outlined"
+                        value={assunto}
+                        onChange={(e) => setAssunto(e.target.value)}
                         size="small"
                         />
                         <TextField
