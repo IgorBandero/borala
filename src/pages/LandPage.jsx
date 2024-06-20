@@ -5,7 +5,7 @@ import SignUpPage from "./SignUpPage";
 import SignInPage from "./SignInPage";
 import FaleConoscoPage from "./FaleConoscoPage";
 import PageContainer from "../components/PageContainer";
-import logo from "../assets/logo-blue.png";
+import app from "../assets/app.png";
 import image01 from "../assets/image01.png";
 import image01_mobile from "../assets/image01-mobile.png";
 import image02 from "../assets/image02.png";
@@ -70,7 +70,7 @@ export default function LandInPage(){
                     </ThemeProvider>
                 </MainLeftContainer>
                 <MainRightContainer> 
-                    <Image src={logo}/>
+                    <Image src={app}/>
                 </MainRightContainer>
 
                 <SignUpContainer isOpen={isVisibleSignUp}>
@@ -272,7 +272,7 @@ const MainLeftContainer = styled.section`
     }
 `
 const Image = styled.img`
-    width: 50%;
+    height: 100%;
     @media (max-width: 650px) {
         width: 60%;
     }
@@ -574,7 +574,8 @@ const SignUpContainer = styled.div`
     right: 0;
     bottom: 0;
     backdrop-filter: blur(10px);
-    background-color: rgb(167, 203, 255);
+    //background-color: rgb(167, 203, 255);
+    background-color: white;
 
     h1 {
         color: rgb(20,20,20);
@@ -601,7 +602,8 @@ const SignInContainer = styled.div`
     right: 0;
     bottom: 0;
     backdrop-filter: blur(15px);
-    background-color: rgb(167, 203, 255);
+    //background-color: rgb(167, 203, 255);
+    background-color: white;
 
     h1 {
         color: #000000;
